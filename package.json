@@ -25,9 +25,10 @@
     "url": "git+https://github.com/lfurzewaddock/gatsby-plugin-smartertrack.git"
   },
   "keywords": [
+    "gatsby",
+    "gatsby-plugin",
     "SmarterTrack",
     "SmarterTools",
-    "GatsbyJS",
     "chat",
     "tracking",
     "widget",
@@ -35,6 +36,7 @@
   ],
   "author": "Leo Furze-Waddock <leo@furze-waddock.com>",
   "license": "MIT",
+  "private": false,
   "bugs": {
     "url": "https://github.com/lfurzewaddock/gatsby-plugin-smartertrack/issues"
   },
@@ -68,5 +70,8 @@
     "webpack-dev-server": "^3.1.9",
     "webpack-merge": "^4.1.4",
     "webpack-node-externals": "^1.7.2"
+  },
+  "peerDependencies": {
+    "gatsby": ">= 2.0.0"
   }
 }
