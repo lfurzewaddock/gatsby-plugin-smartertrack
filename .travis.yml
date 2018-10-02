@@ -18,6 +18,6 @@ deploy:
   provider: npm
   email: "leo@furze-waddock.com"
   api_key: 
-    secure: process.env.npm_access_token
+    secure: $npm_access_token
   on:
     tags: true
