@@ -10,4 +10,13 @@ before_script:
   - npm run devBuild
 script:
   - npm t
-after_success: npm run coveralls
+after_success: 
+  - npm run coveralls
+before_deploy:
+  - npm run build
+deploy:
+  provider: npm
+  email: "leo@furze-waddock.com"
+  api_key: process.env.npm_access_token
+  on:
+    tags: true
