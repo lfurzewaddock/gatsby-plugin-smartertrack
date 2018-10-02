@@ -19,3 +19,6 @@ dist
 /plugin-config.js
 /smartertrack-html.js
 /smartertrack-script.js
+
+# coveralls config file
+.coveralls.yml

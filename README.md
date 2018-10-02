@@ -1,1 +1,2 @@
 [![Build Status](https://travis-ci.com/lfurzewaddock/gatsby-plugin-smartertrack.svg?branch=master)](https://travis-ci.com/lfurzewaddock/gatsby-plugin-smartertrack)
+[![Coverage Status](https://coveralls.io/repos/github/lfurzewaddock/gatsby-plugin-smartertrack/badge.svg?branch=master)](https://coveralls.io/github/lfurzewaddock/gatsby-plugin-smartertrack?branch=master)

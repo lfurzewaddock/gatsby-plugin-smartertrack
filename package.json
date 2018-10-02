@@ -22,7 +22,8 @@
     "lint": "node_modules/.bin/prettier-eslint \"*/**/*.js\" --log-level info",
     "lintFix": "node_modules/.bin/prettier-eslint  \"*/**/*.js\" --write --log-level warn",
     "coverage": "NODE_ENV=development node_modules/nyc/bin/nyc.js npm test",
-    "coverReport": "npm run coverage && node_modules/nyc/bin/nyc.js report --reporter=html && ./bin/opn-cli coverage/index.html -- chrome"
+    "coverReport": "npm run coverage && node_modules/nyc/bin/nyc.js report --reporter=html && ./bin/opn-cli coverage/index.html -- chrome",
+    "coveralls": "npm run coverage && node_modules/nyc/bin/nyc.js report --reporter=text-lcov | node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,7 @@
     "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
+    "coveralls": "^3.0.2",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^4.19.1",
