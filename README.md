@@ -27,7 +27,7 @@ module.exports = {
           isEnabled: true /* <boolean> - OPTIONAL: default = true */,
           options: {
             elementId: 'chattab' /* <string: HTML element ID> - OPTIONAL: default = 'chattab' */,
-            configNum: 0 /* <number: SmarterTrack config> - OPTIONAL: default = 0 */,
+            configNum: 0 /* <number: SmarterTrack 'Live Chat Link' config> - OPTIONAL: default = 0 */,
           },
         },
         whosOn: {
