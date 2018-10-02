@@ -13,3 +13,9 @@ dist
 
 # Apple MAC hidden files
 .DS_Store
+
+# Babel transpiled files in project root
+/gatsby-ssr.js
+/plugin-config.js
+/smartertrack-html.js
+/smartertrack-script.js
