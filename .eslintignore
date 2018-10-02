@@ -7,5 +7,6 @@ node_modules/*
 # Babel transpiled files in project root
 /gatsby-ssr.js
 /plugin-config.js
-/smartertrack-html.js
-/smartertrack-script.js
+/smartertrack-live-chat-html.js
+/smartertrack-live-chat-script.js
+/smartertrack-whos-on-script.js
