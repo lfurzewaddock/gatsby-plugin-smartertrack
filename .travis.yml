@@ -15,6 +15,7 @@ after_success:
 before_deploy:
   - npm run build
 deploy:
+  skip_cleanup: true
   provider: npm
   email: "leo@furze-waddock.com"
   api_key: 
