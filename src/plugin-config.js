@@ -2,7 +2,7 @@ const options = {
   fqdn: "",
   port: 443,
   elementId: "chattab",
-  configNum: 1,
+  configNum: 0,
 };
 
 export default options;

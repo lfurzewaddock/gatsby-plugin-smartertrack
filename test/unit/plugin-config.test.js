@@ -77,7 +77,7 @@ test("plugin-options", (t) => {
 
   t.test("pluginOptions", (assert) => {
     const message = "number property 'configNum' should contain 1";
-    const expected = 1;
+    const expected = 0;
     const actual = pluginOptions.configNum;
 
     assert.equal(actual, expected, message);
