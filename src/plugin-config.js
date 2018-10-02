@@ -1,8 +1,19 @@
 const options = {
   fqdn: "",
   port: 443,
-  elementId: "chattab",
-  configNum: 0,
+  liveChat: {
+    isEnabled: true,
+    options: {
+      elementId: "chattab",
+      configNum: 0,
+    },
+  },
+  whosOn: {
+    isEnabled: true,
+    options: {
+      virtualPage: "",
+    },
+  },
 };
 
 export default options;
