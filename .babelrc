@@ -1,13 +1,14 @@
 {
-  "presets": [
+  "presets": ["react",
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "ie >= 8"]
+        "node": "6.0.0"
       }
     }]
   ],
   "plugins": [
     "add-module-exports",
-    "transform-es2015-modules-umd"
+    "transform-es2015-modules-commonjs",
+    "transform-object-rest-spread"
   ]
 }
