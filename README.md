@@ -21,19 +21,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-smartertrack`,
       options: {
-        fqdn: `<string: fully qualfied domain name, eg. www.my-smartertrack-server.com> *REQUIRED`,
-        port: `<number: port> - OPTIONAL: defaults to 443`,
+        fqdn: 'www.my-smartertrack-server.com' /* <string: fully qualified domain name> - REQUIRED */,
+        port: 443 /* <number: port> - OPTIONAL: default = 443 */,
         liveChat: {
-          isEnabled: `<boolean> - OPTIONAL: defaults to true`,
+          isEnabled: true /* <boolean> - OPTIONAL: default = true */,
           options: {
-            elementId: `<string: HTML element ID> - OPTIONAL: defaults to 'chattab'`,
-            configNum: `<number: SmarterTrack config> OPTIONAL: defaults to 0`,
+            elementId: 'chattab' /* <string: HTML element ID> - OPTIONAL: default = 'chattab' */,
+            configNum: 0 /* <number: SmarterTrack config> - OPTIONAL: default = 0 */,
           },
         },
         whosOn: {
-          isEnabled: `<boolean> - OPTIONAL: defaults to true`,
+          isEnabled: true /* <boolean> - OPTIONAL: default = true */,
           options: {
-            virtualPage: `<string: SmarterTrack virtual page> - OPTIONAL: defaults to an empty string`,
+            virtualPage: '' /* <string: SmarterTrack virtual page> - OPTIONAL: default = empty string */,
           },
         },
       },
