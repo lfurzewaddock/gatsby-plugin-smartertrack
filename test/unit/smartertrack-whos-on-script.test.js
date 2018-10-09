@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 import "../enzyme-setup";
 import SmarterTrackWhosOnScript from "../../src/smartertrack-whos-on-script";
 
-test("SmarterTrackWhosOnScript", (t) => {
+test("smartertrack-whos-on-script.js", (t) => {
   t.test("supplied valid values for all props, except for virtualPage prop = empty string", (assert) => {
     // eslint-disable-next-line react/jsx-filename-extension
     const wrapper = shallow(<SmarterTrackWhosOnScript
@@ -20,13 +20,7 @@ test("SmarterTrackWhosOnScript", (t) => {
       function smarterTrackWhosOn_TrackPage(a) {
         a.TrackPage();
       }
-      (function() {
-        var c = document.createElement('script');
-        c.type = 'text/javascript'; c.async = false;
-        c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + "test.com:1111/ST.ashx?scriptonly=true";
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(c,s);
-    })();</script>`;
+    </script>`;
 
     assert.equal(actual.replace(/\s/g, ""), expected.replace(/\s/g, ""), message);
     assert.end();
@@ -45,13 +39,7 @@ test("SmarterTrackWhosOnScript", (t) => {
       function smarterTrackWhosOn_TrackPage(a) {
         a.TrackVirtualPage('a-virtual-test-page');
       }
-      (function() {
-        var c = document.createElement('script');
-        c.type = 'text/javascript'; c.async = false;
-        c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + "test.com:1111/ST.ashx?scriptonly=true";
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(c,s);
-    })();</script>`;
+    </script>`;
 
     assert.equal(actual.replace(/\s/g, ""), expected.replace(/\s/g, ""), message);
     assert.end();

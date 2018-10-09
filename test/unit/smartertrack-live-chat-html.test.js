@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 import "../enzyme-setup";
 import SmarterTrackLiveChatHtml from "../../src/smartertrack-live-chat-html";
 
-test("SmarterTrackLiveChatScript", (t) => {
+test("smartertrack-live-chat-html.js", (t) => {
   t.test("SmarterTrackLiveChatHtml", (assert) => {
     const wrapper = shallow(<SmarterTrackLiveChatHtml elementId="testId" />); // eslint-disable-line react/jsx-filename-extension
 

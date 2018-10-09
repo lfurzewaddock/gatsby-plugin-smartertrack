@@ -2,7 +2,7 @@ import test from "tape";
 
 import pluginOptions from "../../src/plugin-config";
 
-test("pluginOptions", (t) => {
+test("plugin-config.js", (t) => {
   t.test("pluginOptions", (assert) => {
     const message = "should be an object";
     const expected = "object";

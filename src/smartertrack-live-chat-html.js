@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SmarterTrackHtml = ({ elementId }) => (
+const SmarterTrackLiveChatHtml = ({ elementId }) => (
   <div id={elementId} /> // eslint-disable-line react/jsx-filename-extension
 );
 
-SmarterTrackHtml.propTypes = {
+SmarterTrackLiveChatHtml.propTypes = {
   elementId: PropTypes.string.isRequired,
 };
 
-export default SmarterTrackHtml;
+export default SmarterTrackLiveChatHtml;

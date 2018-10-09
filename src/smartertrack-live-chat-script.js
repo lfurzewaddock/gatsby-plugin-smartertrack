@@ -13,7 +13,7 @@ function createScriptMarkup(fqdn, port, elementId, configNum) {
       })();`,
   };
 }
-const SmarterTrackScript = ({
+const SmarterTrackLiveChatScript = ({
   fqdn, port, elementId, configNum,
 }) => (
   /* eslint-disable react/jsx-filename-extension */
@@ -26,11 +26,11 @@ const SmarterTrackScript = ({
   /* eslint-enable react/no-danger */
 );
 
-SmarterTrackScript.propTypes = {
+SmarterTrackLiveChatScript.propTypes = {
   fqdn: PropTypes.string.isRequired,
   port: PropTypes.number.isRequired,
   elementId: PropTypes.string.isRequired,
   configNum: PropTypes.number.isRequired,
 };
 
-export default SmarterTrackScript;
+export default SmarterTrackLiveChatScript;

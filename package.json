@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-smartertrack",
-  "version": "1.0.1",
-  "description": "Adds SmarterTrack by SmarterTools chat widget and who's on tracking scripts.",
+  "version": "1.1.0",
+  "description": "Adds SmarterTrack by SmarterTools live chat widget and who's on tracking scripts.",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir . --ignore test",
@@ -92,6 +92,7 @@
     "deepmerge": "^2.1.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-script-tag": "^1.1.2"
   }
 }
