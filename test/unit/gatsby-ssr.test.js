@@ -57,7 +57,7 @@ function setup() {
   };
 }
 
-function teardown(fixtures) {
+function teardown(fixtures) { // eslint-disable-line no-unused-vars
   td.reset();
   // Assign reference to null for GC
   fixtures = null; // eslint-disable-line no-param-reassign
