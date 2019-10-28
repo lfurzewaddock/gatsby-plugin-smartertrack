@@ -9,12 +9,15 @@ import SmarterTrackWhosOnScript from "./smartertrack-whos-on-script";
 
 const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
   /* istanbul ignore next  */
-  if (process.env.NODE_ENV === "production" ||
-      process.env.NODE_ENV === "debug" ||
-      process.env.NODE_ENV === "test") {
-    const {
-      fqdn, port, liveChat, whosOn,
-    } = merge.all([defaultOptions, pluginOptions]);
+  if (
+    process.env.NODE_ENV === "production" ||
+    process.env.NODE_ENV === "debug" ||
+    process.env.NODE_ENV === "test"
+  ) {
+    const { fqdn, port, liveChat, whosOn } = merge.all([
+      defaultOptions,
+      pluginOptions
+    ]);
 
     if (!fqdn) return;
 
@@ -32,7 +35,8 @@ const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
           elementId={liveChat.options.elementId}
           configNum={liveChat.options.configNum}
           key="gatsby-plugin-smartertrack-live-chat-script"
-        />];
+        />
+      ];
     }
 
     let whosOnComponents = [];
@@ -49,7 +53,7 @@ const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
           type="text/javascript"
           src={scriptString}
           key="gatsby-plugin-smartertrack-whos-on-script-tag"
-        />,
+        />
       ];
     }
 
@@ -59,36 +63,47 @@ const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
   }
 };
 
-const onPreRenderHTML = ({ getPostBodyComponents, replacePostBodyComponents }) => {
+const onPreRenderHTML = ({
+  getPostBodyComponents,
+  replacePostBodyComponents
+}) => {
   /* istanbul ignore next  */
-  if (process.env.NODE_ENV === "production" ||
-      process.env.NODE_ENV === "debug" ||
-      process.env.NODE_ENV === "test") {
+  if (
+    process.env.NODE_ENV === "production" ||
+    process.env.NODE_ENV === "debug" ||
+    process.env.NODE_ENV === "test"
+  ) {
     const postBodyComponents = getPostBodyComponents();
 
-    const tempIndexedObjects =
-      postBodyComponents.map((component, i) => ({ index: i, value: component }));
-
-    // Move both 'Who's On' scripts to last postitions in array
-    tempIndexedObjects.sort((aComponent) => {
-      if (aComponent.value.key === "gatsby-plugin-smartertrack-whos-on-script" ||
-          aComponent.value.key === "gatsby-plugin-smartertrack-whos-on-script-tag") {
-        return 1;
+    const smarterTrackWhosOnComponents = postBodyComponents.filter(
+      component => {
+        return (
+          component.key === "gatsby-plugin-smartertrack-whos-on-script" ||
+          component.key === "gatsby-plugin-smartertrack-whos-on-script-tag"
+        );
       }
-      return 0;
-    });
+    );
+
     // Move 'Who's On' script tag to last position if not already
-    tempIndexedObjects.sort((aComponent, bComponent) => {
-      if (aComponent.value.key === "gatsby-plugin-smartertrack-whos-on-script-tag" &&
-          bComponent.value.key === "gatsby-plugin-smartertrack-whos-on-script"
+    smarterTrackWhosOnComponents.sort((aComponent, bComponent) => {
+      if (
+        aComponent.key === "gatsby-plugin-smartertrack-whos-on-script-tag" &&
+        bComponent.key === "gatsby-plugin-smartertrack-whos-on-script"
       ) {
         return 1;
       }
-      return 0;
+      return -1;
     });
 
-    const postBodyComponentsBlockingLast =
-      tempIndexedObjects.map(component => (postBodyComponents[component.index]));
+    const allOtherComponents = postBodyComponents.filter(
+      component =>
+        component.key !== "gatsby-plugin-smartertrack-whos-on-script" &&
+        component.key !== "gatsby-plugin-smartertrack-whos-on-script-tag"
+    );
+
+    const postBodyComponentsBlockingLast = allOtherComponents.concat(
+      smarterTrackWhosOnComponents
+    );
 
     replacePostBodyComponents(postBodyComponentsBlockingLast);
   }
