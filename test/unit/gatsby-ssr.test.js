@@ -20,35 +20,35 @@ function setup() {
   const postBodyComponentsfixture = () => {
     const postBodyComponents = [
       {
-        key: "gatsby-plugin-google-analytics"
+        key: "gatsby-plugin-google-analytics",
       },
       {
-        key: "gatsby-plugin-smartertrack-live-chat-element"
+        key: "gatsby-plugin-smartertrack-live-chat-element",
       },
       {
-        key: "gatsby-plugin-smartertrack-live-chat-script"
+        key: "gatsby-plugin-smartertrack-live-chat-script",
       },
       {
-        key: "gatsby-plugin-smartertrack-whos-on-script"
+        key: "gatsby-plugin-smartertrack-whos-on-script",
       },
       {
-        key: "gatsby-plugin-smartertrack-whos-on-script-tag"
+        key: "gatsby-plugin-smartertrack-whos-on-script-tag",
       },
       {
-        key: "script-loader"
+        key: "script-loader",
       },
       {
-        key: "chunk-mapping"
+        key: "chunk-mapping",
       },
       {
-        key: "/webpack-runtime-601d0917350e73c0bb65.js"
+        key: "/webpack-runtime-601d0917350e73c0bb65.js",
       },
       {
-        key: "/app-c174296a010c820ec961.js"
+        key: "/app-c174296a010c820ec961.js",
       },
       {
-        key: "/component---src-pages-404-js-5558b2f8b531898ee6c2.js"
-      }
+        key: "/component---src-pages-404-js-5558b2f8b531898ee6c2.js",
+      },
     ];
 
     return postBodyComponents;
@@ -61,15 +61,16 @@ function setup() {
     SmarterTrackWhosOnScript,
     ScriptTag,
     postBodyComponentsfixture,
-    subject
+    subject,
   };
 }
 
+// eslint-disable-next-line no-unused-vars
 function teardown(fixtures) {
-  // eslint-disable-line no-unused-vars
   td.reset();
   // Assign reference to null for GC
-  fixtures = null; // eslint-disable-line no-param-reassign
+  // eslint-disable-next-line no-param-reassign
+  fixtures = null;
 }
 
 test("gatsby-ssr.js", t => {
@@ -92,7 +93,7 @@ test("gatsby-ssr.js", t => {
 
     const fakeFn = td.func();
     const actual = fixtures.subject.onRenderBody({
-      setPostBodyComponents: fakeFn
+      setPostBodyComponents: fakeFn,
     });
 
     td.verify(fakeFn(), { times: 0 });
@@ -156,7 +157,7 @@ test("gatsby-ssr.js", t => {
           type="text/javascript"
           src="//test.com:443/ST.ashx?scriptonly=true"
           key="gatsby-plugin-smartertrack-whos-on-script-tag"
-        />
+        />,
       ])
     );
     assert.equal(actual, expected, message);
@@ -174,8 +175,8 @@ test("gatsby-ssr.js", t => {
     const options = {
       fqdn: "test.com",
       liveChat: {
-        isEnabled: false
-      }
+        isEnabled: false,
+      },
     };
     const actual = fixtures.subject.onRenderBody(
       { setPostBodyComponents: fakeFn },
@@ -194,7 +195,7 @@ test("gatsby-ssr.js", t => {
           type="text/javascript"
           src="//test.com:443/ST.ashx?scriptonly=true"
           key="gatsby-plugin-smartertrack-whos-on-script-tag"
-        />
+        />,
       ])
     );
     assert.equal(actual, expected, message);
@@ -212,8 +213,8 @@ test("gatsby-ssr.js", t => {
     const options = {
       fqdn: "test.com",
       whosOn: {
-        isEnabled: false
-      }
+        isEnabled: false,
+      },
     };
     const actual = fixtures.subject.onRenderBody(
       { setPostBodyComponents: fakeFn },
@@ -233,7 +234,7 @@ test("gatsby-ssr.js", t => {
           elementId={fixtures.defaultOptions.liveChat.options.elementId}
           configNum={fixtures.defaultOptions.liveChat.options.configNum}
           key="gatsby-plugin-smartertrack-live-chat-script"
-        />
+        />,
       ])
     );
     assert.equal(actual, expected, message);
@@ -257,35 +258,35 @@ test("gatsby-ssr.js", t => {
     // Reordered postBodyComponents objects (keys only) fixture:
     const postBodyComponents = [
       {
-        key: "gatsby-plugin-google-analytics"
+        key: "gatsby-plugin-google-analytics",
       },
       {
-        key: "gatsby-plugin-smartertrack-live-chat-element"
+        key: "gatsby-plugin-smartertrack-live-chat-element",
       },
       {
-        key: "gatsby-plugin-smartertrack-live-chat-script"
+        key: "gatsby-plugin-smartertrack-live-chat-script",
       },
       {
-        key: "script-loader"
+        key: "script-loader",
       },
       {
-        key: "chunk-mapping"
+        key: "chunk-mapping",
       },
       {
-        key: "/webpack-runtime-601d0917350e73c0bb65.js"
+        key: "/webpack-runtime-601d0917350e73c0bb65.js",
       },
       {
-        key: "/app-c174296a010c820ec961.js"
+        key: "/app-c174296a010c820ec961.js",
       },
       {
-        key: "/component---src-pages-404-js-5558b2f8b531898ee6c2.js"
+        key: "/component---src-pages-404-js-5558b2f8b531898ee6c2.js",
       },
       {
-        key: "gatsby-plugin-smartertrack-whos-on-script"
+        key: "gatsby-plugin-smartertrack-whos-on-script",
       },
       {
-        key: "gatsby-plugin-smartertrack-whos-on-script-tag"
-      }
+        key: "gatsby-plugin-smartertrack-whos-on-script-tag",
+      },
     ];
 
     const fakeFn = td.func();
@@ -295,7 +296,7 @@ test("gatsby-ssr.js", t => {
     const expected = undefined;
     const actual = fixtures.subject.onPreRenderHTML({
       getPostBodyComponents: fixtures.postBodyComponentsfixture,
-      replacePostBodyComponents: fakeFn
+      replacePostBodyComponents: fakeFn,
     });
 
     td.verify(fakeFn(postBodyComponents));

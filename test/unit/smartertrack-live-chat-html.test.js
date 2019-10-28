@@ -5,8 +5,8 @@ import { shallow } from "enzyme";
 import "../enzyme-setup";
 import SmarterTrackLiveChatHtml from "../../src/smartertrack-live-chat-html";
 
-test("smartertrack-live-chat-html.js", (t) => {
-  t.test("SmarterTrackLiveChatHtml", (assert) => {
+test("smartertrack-live-chat-html.js", t => {
+  t.test("SmarterTrackLiveChatHtml", assert => {
     const wrapper = shallow(<SmarterTrackLiveChatHtml elementId="testId" />); // eslint-disable-line react/jsx-filename-extension
 
     const message = "should render a div with id equal to 'testId'";

@@ -16,7 +16,7 @@ const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
   ) {
     const { fqdn, port, liveChat, whosOn } = merge.all([
       defaultOptions,
-      pluginOptions
+      pluginOptions,
     ]);
 
     if (!fqdn) return;
@@ -35,7 +35,7 @@ const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
           elementId={liveChat.options.elementId}
           configNum={liveChat.options.configNum}
           key="gatsby-plugin-smartertrack-live-chat-script"
-        />
+        />,
       ];
     }
 
@@ -53,7 +53,7 @@ const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
           type="text/javascript"
           src={scriptString}
           key="gatsby-plugin-smartertrack-whos-on-script-tag"
-        />
+        />,
       ];
     }
 
@@ -65,7 +65,7 @@ const onRenderBody = ({ setPostBodyComponents }, pluginOptions = {}) => {
 
 const onPreRenderHTML = ({
   getPostBodyComponents,
-  replacePostBodyComponents
+  replacePostBodyComponents,
 }) => {
   /* istanbul ignore next  */
   if (

@@ -13,14 +13,17 @@ function createScriptMarkup(fqdn, port, elementId, configNum) {
       })();`,
   };
 }
-const SmarterTrackLiveChatScript = ({
-  fqdn, port, elementId, configNum,
-}) => (
+const SmarterTrackLiveChatScript = ({ fqdn, port, elementId, configNum }) => (
   /* eslint-disable react/jsx-filename-extension */
   /* eslint-disable react/no-danger */
   <script
     type="text/javascript"
-    dangerouslySetInnerHTML={createScriptMarkup(fqdn, port, elementId, configNum)}
+    dangerouslySetInnerHTML={createScriptMarkup(
+      fqdn,
+      port,
+      elementId,
+      configNum
+    )}
   />
   /* eslint-enable react/jsx-filename-extension */
   /* eslint-enable react/no-danger */

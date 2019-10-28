@@ -18,9 +18,7 @@ function createScriptMarkup(virtualPage) {
   };
 }
 
-const SmarterTrackWhosOnScript = ({
-  virtualPage,
-}) => (
+const SmarterTrackWhosOnScript = ({ virtualPage }) => (
   /* eslint-disable react/jsx-filename-extension */
   /* eslint-disable react/no-danger */
   <script

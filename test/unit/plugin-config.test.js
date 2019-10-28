@@ -2,8 +2,8 @@ import test from "tape";
 
 import pluginOptions from "../../src/plugin-config";
 
-test("plugin-config.js", (t) => {
-  t.test("pluginOptions", (assert) => {
+test("plugin-config.js", t => {
+  t.test("pluginOptions", assert => {
     const message = "should be an object";
     const expected = "object";
     const actual = typeof pluginOptions;
@@ -12,7 +12,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions", (assert) => {
+  t.test("pluginOptions", assert => {
     const message = "should have a string property: 'fqdn'";
     const expected = "string";
     const actual = typeof pluginOptions.fqdn;
@@ -21,7 +21,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions", (assert) => {
+  t.test("pluginOptions", assert => {
     const message = "string property 'fqdn' should contain an empty string";
     const expected = "";
     const actual = pluginOptions.fqdn;
@@ -30,7 +30,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions", (assert) => {
+  t.test("pluginOptions", assert => {
     const message = "should have a number property: 'port'";
     const expected = "number";
     const actual = typeof pluginOptions.port;
@@ -39,7 +39,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions", (assert) => {
+  t.test("pluginOptions", assert => {
     const message = "number property 'port' should contain 443";
     const expected = 443;
     const actual = pluginOptions.port;
@@ -48,7 +48,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions", (assert) => {
+  t.test("pluginOptions", assert => {
     const message = "should contain a 'liveChat' object";
     const expected = "object";
     const actual = typeof pluginOptions.liveChat;
@@ -57,7 +57,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.liveChat", (assert) => {
+  t.test("pluginOptions.liveChat", assert => {
     const message = "should have a boolean property: 'isEnabled'";
     const expected = "boolean";
     const actual = typeof pluginOptions.liveChat.isEnabled;
@@ -66,7 +66,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.liveChat", (assert) => {
+  t.test("pluginOptions.liveChat", assert => {
     const message = "boolean 'isEnabled' should contain true";
     const expected = true;
     const actual = pluginOptions.liveChat.isEnabled;
@@ -75,7 +75,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.liveChat", (assert) => {
+  t.test("pluginOptions.liveChat", assert => {
     const message = "should contain an 'options' object";
     const expected = "object";
     const actual = typeof pluginOptions.liveChat.options;
@@ -84,7 +84,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.liveChat.options", (assert) => {
+  t.test("pluginOptions.liveChat.options", assert => {
     const message = "should have a string property: 'elementId'";
     const expected = "string";
     const actual = typeof pluginOptions.liveChat.options.elementId;
@@ -93,7 +93,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.liveChat.options", (assert) => {
+  t.test("pluginOptions.liveChat.options", assert => {
     const message = "string property 'elementId' should contain 'chattab'";
     const expected = "chattab";
     const actual = pluginOptions.liveChat.options.elementId;
@@ -102,7 +102,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.liveChat.options", (assert) => {
+  t.test("pluginOptions.liveChat.options", assert => {
     const message = "should have a number property: 'configNum'";
     const expected = "number";
     const actual = typeof pluginOptions.liveChat.options.configNum;
@@ -111,7 +111,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.liveChat.options", (assert) => {
+  t.test("pluginOptions.liveChat.options", assert => {
     const message = "number property 'configNum' should contain 0";
     const expected = 0;
     const actual = pluginOptions.liveChat.options.configNum;
@@ -120,7 +120,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions", (assert) => {
+  t.test("pluginOptions", assert => {
     const message = "should contain a 'whosOn' object";
     const expected = "object";
     const actual = typeof pluginOptions.whosOn;
@@ -129,7 +129,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.whosOn", (assert) => {
+  t.test("pluginOptions.whosOn", assert => {
     const message = "should have a boolean property: 'isEnabled'";
     const expected = "boolean";
     const actual = typeof pluginOptions.whosOn.isEnabled;
@@ -138,7 +138,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.whosOn", (assert) => {
+  t.test("pluginOptions.whosOn", assert => {
     const message = "boolean 'isEnabled' should contain true";
     const expected = true;
     const actual = pluginOptions.whosOn.isEnabled;
@@ -147,7 +147,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.whosOn", (assert) => {
+  t.test("pluginOptions.whosOn", assert => {
     const message = "should contain an 'options' object";
     const expected = "object";
     const actual = typeof pluginOptions.whosOn.options;
@@ -156,7 +156,7 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.whosOn.options", (assert) => {
+  t.test("pluginOptions.whosOn.options", assert => {
     const message = "should have a string property: 'virtualPage'";
     const expected = "string";
     const actual = typeof pluginOptions.whosOn.options.virtualPage;
@@ -165,8 +165,9 @@ test("plugin-config.js", (t) => {
     assert.end();
   });
 
-  t.test("pluginOptions.whosOn.options", (assert) => {
-    const message = "string property 'virtualPage' should contain an empty string";
+  t.test("pluginOptions.whosOn.options", assert => {
+    const message =
+      "string property 'virtualPage' should contain an empty string";
     const expected = "";
     const actual = pluginOptions.whosOn.options.virtualPage;
 
