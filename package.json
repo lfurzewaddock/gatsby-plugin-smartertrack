@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-smartertrack",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Adds SmarterTrack by SmarterTools live chat widget and who's on tracking scripts.",
   "main": "index.js",
   "scripts": {
